@@ -32,10 +32,7 @@ jobs:
           git config --global user.email "dokoh60689@dusyum.com"
           git config --global user.name "Democopy"
           git switch -c demo
-          git add .
-          git commit -m "latest"
-          git remote set-url origin https://github.com/Democopy/Testcopy.git
-          
+          git remote set-url origin https://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@github.com/Democopy/Testcopy.git
           git rm -rf README.md
           git add .
           git commit -m "new"

@@ -3,7 +3,7 @@ name: Copy Code to Another Repository
 on:
   push:
     branches:
-      - temp
+      - temp1
 
 jobs:
   copy-code:
@@ -36,7 +36,7 @@ jobs:
           git rm -rf README.md
           git add .
           git commit -m "new"
-          git pull origin main
+          git pull origin main --ff --allow-unrelated-histories
           git push -u origin demo
 
       # - name: Commit and push changes

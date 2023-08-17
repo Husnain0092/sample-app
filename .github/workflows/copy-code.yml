@@ -31,7 +31,7 @@ jobs:
           git init
           git add .
           git commit -m "latest"
-          git remote add origin https://github.com/Democopy/Testcopy.git
+          git remote set-url origin https://Democopy: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@github.com/Democopy/Testcopy.git
           git switch -c demo
           git rm -rf README.md
           git add .

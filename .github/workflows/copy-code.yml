@@ -1,0 +1,36 @@
+name: Copy Code to Another Repository
+
+on:
+  push:
+    branches:
+      - temp
+
+jobs:
+  copy-code:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "Husnain0092"
+          git config --global user.email "husnain.ibrahim.12@gmail.com"
+
+      - name: Clone second repository
+        run: |
+          git clone https://github.com/Democopy/Testcopy.git
+          cd Testcopy
+          git checkout -b demo
+
+      - name: Copy code to second repository
+        run: |
+          cp -R $GITHUB_WORKSPACE/* Testcopy/
+
+      - name: Commit and push changes
+        run: |
+          cd Testcopy
+          git add .
+          git commit -m "Copy code from temp branch"
+          git push origin demo

@@ -3,7 +3,7 @@ name: Copy Code from Account A to Account B
 on:
   push:
     branches:
-      - main
+      - new
 
 jobs:
   copy_code:

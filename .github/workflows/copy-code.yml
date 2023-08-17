@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - temp
-permissions:
-  contents: write
 jobs:
   copy-code:
     runs-on: ubuntu-latest
@@ -32,6 +30,8 @@ jobs:
           cd $HOME/Testcopy
           git switch -c demo
           git remote set-url origin https://Democopy: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@github.com/Democopy/Testcopy.git
+          git config user.email "dokoh60689@dusyum.com"
+          git config user.name "Democopy"
           git rm -rf README.md
           git add .
           git commit -m "new"

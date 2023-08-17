@@ -32,12 +32,12 @@ jobs:
           git add .
           git commit -m "latest"
           git remote add origin https://github.com/Democopy/Testcopy.git
-          git config --global user.name "Husnain0092"
-          git config --global user.email "husnain.ibrahim.12@gmail.com"
           git switch -c demo
           git rm -rf README.md
           git add .
           git commit -m "new"
+          git config --global user.name "Husnain0092"
+          git config --global user.email "husnain.ibrahim.12@gmail.com"
           git pull origin main --ff --allow-unrelated-histories
           git push -u origin demo
 

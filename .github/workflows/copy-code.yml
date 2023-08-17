@@ -20,7 +20,7 @@ jobs:
 
       - name: Clone second repository
         run: |
-          git clone https://Husnain0092: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@github.com/Democopy/Testcopy.git
+          git clone https://Democopy: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@github.com/Democopy/Testcopy.git
           cd Testcopy
 
       - name: Copy code to second repository

@@ -31,8 +31,8 @@ jobs:
           git add .
 
       - name: Commit and push changes
-        env:
-            ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        # env:
+        #     ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
           cd $HOME/Testcopy
           git commit -m "Copy code from temp branch"

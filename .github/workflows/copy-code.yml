@@ -3,7 +3,7 @@ name: Copy Code to Another Repository
 on:
   push:
     branches:
-      - main
+      - temp
 
 jobs:
   copy-code:

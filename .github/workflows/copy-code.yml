@@ -20,9 +20,8 @@ jobs:
 
       - name: Clone second repository
         run: |
-          git clone https://github.com/Democopy/Testcopy.git
-          cd Testcopy
-          git checkout -b demo
+          git clone https://Husnain0092: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@github.com/Democopy/Testcopy.git          cd Testcopy
+          git switch -c demo
 
       - name: Copy code to second repository
         run: |
@@ -37,4 +36,4 @@ jobs:
           cd $HOME/Testcopy
           git commit -m "Copy code from temp branch"
           git remote set-url origin https://github.com/Democopy/Testcopy.git
-          git push origin HEAD:demo
+          git push origin -u demo

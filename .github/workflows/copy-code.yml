@@ -26,11 +26,11 @@ jobs:
 
       - name: Copy code to second repository
         run: |
-          cp -R $GITHUB_WORKSPACE/. Testcopy/
+          cp -R $GITHUB_WORKSPACE/. $HOME/Testcopy/
 
       - name: Commit and push changes
         run: |
-          cd Testcopy
+          cd $HOME/Testcopy
           git add .
           git commit -m "Copy code from temp branch"
           git push origin demo

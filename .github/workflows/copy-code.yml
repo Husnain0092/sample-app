@@ -29,8 +29,8 @@ jobs:
           cd Testcopy
           cp -R $GITHUB_WORKSPACE/. $HOME/Testcopy/
           cd $HOME/Testcopy
-          git config user.email "husnain.ibrahim.12@gmail.com"
-          git config user.name "Husnain0092"
+          git config --global user.email "dokoh60689@dusyum.com"
+          git config --global user.name "Democopy"
           git switch -c demo
           git add .
           git commit -m "latest"

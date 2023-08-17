@@ -29,11 +29,6 @@ jobs:
           cd $HOME/Testcopy
           git switch -c demo
           rm -rf .git
-
-      - name: Commit and push changes
-        # env:
-        #     ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        run: |
           git init
           git add .
           git commit -m "latest"
@@ -41,6 +36,10 @@ jobs:
           git rm -rf README.md
           git pull origin main
           git push -u origin demo
+
+      # - name: Commit and push changes
+        # env:
+        #     ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         # run: |
         #   cd $HOME/Testcopy
         #   git commit -m "Copy code from temp branch"

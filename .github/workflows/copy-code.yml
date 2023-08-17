@@ -15,8 +15,8 @@ jobs:
 
       - name: Set up Git
         run: |
-          git config --global user.name "Democopy"
-          git config --global user.email "dokoh60689@dusyum.com"
+          git config --global user.name "Husnain0092"
+          git config --global user.email "husnain.ibrahim.12@gmail.com"
 
       - name: Clone second repository
         run: |

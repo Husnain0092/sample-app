@@ -13,10 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # - name: Set up Git
-      #   run: |
-      #     git config --global user.name "Husnain0092"
-      #     git config --global user.email "husnain.ibrahim.12@gmail.com"
+      - name: Set up Git
+        run: |
+          git config --global user.email "dokoh60689@dusyum.com"
+          git config --global user.name "Democopy"
 
       # - name: Clone second repository
       #   run: |
@@ -29,10 +29,8 @@ jobs:
           cd Testcopy
           cp -R $GITHUB_WORKSPACE/. $HOME/Testcopy/
           cd $HOME/Testcopy
-          git config --global user.email "dokoh60689@dusyum.com"
-          git config --global user.name "Democopy"
           git switch -c demo
-          git remote set-url origin https://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@github.com/Democopy/Testcopy.git
+          git remote set-url origin https://Democopy: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@github.com/Democopy/Testcopy.git
           git rm -rf README.md
           git add .
           git commit -m "new"

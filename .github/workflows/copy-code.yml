@@ -25,12 +25,12 @@ jobs:
 
       - name: Copy code to second repository
         run: |
+          git config --global user.name "Husnain0092"
+          git config --global user.email "husnain.ibrahim.12@gmail.com"
           cp -R $GITHUB_WORKSPACE/. $HOME/Testcopy/
           cd $HOME/Testcopy
           rm -rf .git
           git init
-          git config --global user.name "Husnain0092"
-          git config --global user.email "husnain.ibrahim.12@gmail.com"
           git add .
           git commit -m "latest"
           git remote add origin https://github.com/Democopy/Testcopy.git

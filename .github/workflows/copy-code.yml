@@ -34,7 +34,7 @@ jobs:
           git init
           git add .
           git commit -m "latest"
-          git remote set-url https://github.com/Democopy/Testcopy.git
+          git remote set-url origin https://github.com/Democopy/Testcopy.git
           git switch -c demo
           git rm -rf README.md
           git config --global user.email "husnain.ibrahim.12@gmail.com"

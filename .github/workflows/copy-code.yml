@@ -27,15 +27,15 @@ jobs:
         run: |
           cp -R $GITHUB_WORKSPACE/. $HOME/Testcopy/
           cd $HOME/Testcopy
-          git switch -c master
           rm -rf .git
           git init
           git add .
           git commit -m "latest"
-          git remote add origin origin https://github.com/Democopy/Testcopy.git
+          git remote add origin https://github.com/Democopy/Testcopy.git
           git rm -rf README.md
           git pull origin main
-          git push -u origin master
+          git switch -c demo
+          git push -u origin demo
 
       # - name: Commit and push changes
         # env:

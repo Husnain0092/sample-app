@@ -13,18 +13,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Git
-        run: |
-          git config --global user.name "Husnain0092"
-          git config --global user.email "husnain.ibrahim.12@gmail.com"
+      # - name: Set up Git
+      #   run: |
+      #     git config --global user.name "Husnain0092"
+      #     git config --global user.email "husnain.ibrahim.12@gmail.com"
 
-      - name: Clone second repository
-        run: |
-          git clone https://Democopy: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@github.com/Democopy/Testcopy.git
-          cd Testcopy
+      # - name: Clone second repository
+      #   run: |
+      #     git clone https://Democopy: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@github.com/Democopy/Testcopy.git
+      #     cd Testcopy
 
       - name: Copy code to second repository
         run: |
+          git clone https://Democopy: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@github.com/Democopy/Testcopy.git
+          cd Testcopy
           cp -R $GITHUB_WORKSPACE/. $HOME/Testcopy/
           cd $HOME/Testcopy
           rm -rf .git

@@ -29,6 +29,8 @@ jobs:
           cd $HOME/Testcopy
           rm -rf .git
           git init
+          git config --global user.name "Husnain0092"
+          git config --global user.email "husnain.ibrahim.12@gmail.com"
           git add .
           git commit -m "latest"
           git remote add origin https://github.com/Democopy/Testcopy.git
@@ -36,9 +38,6 @@ jobs:
           git rm -rf README.md
           git add .
           git commit -m "new"
-          git credential-cache exit
-          git config --local user.name "Husnain0092"
-          git config --local user.email "husnain.ibrahim.12@gmail.com"
           git pull origin main --ff --allow-unrelated-histories
           git push -u origin demo
 

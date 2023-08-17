@@ -1,0 +1,34 @@
+name: Copy Code from Account A to Account B
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  copy_code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code from Account B repository
+        uses: actions/checkout@v2
+
+      - name: Clone code from Account A repository
+        run: |
+          git clone https://Husnain0092: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@github.com/Husnain0092/sample-app.git
+          cd sample-app
+          git checkout main
+
+      - name: Create and switch to the demo branch in Account B repository
+        run: |
+          git checkout -b demo
+
+      - name: Copy code from Account A repository to Account B repository
+        run: |
+          cp -r sample-app/* .
+          rm -rf sample-app
+
+      - name: Commit and push changes to Account B repository
+        run: |
+          git add .
+          git commit -m "Copy code from Account A"
+          git push origin demo

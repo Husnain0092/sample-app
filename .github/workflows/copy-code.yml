@@ -28,13 +28,19 @@ jobs:
           cp -R $GITHUB_WORKSPACE/. $HOME/Testcopy/
           cd $HOME/Testcopy
           git switch -c demo
-          git add .
+          rm -rf .git
 
       - name: Commit and push changes
         # env:
         #     ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
-          cd $HOME/Testcopy
-          git commit -m "Copy code from temp branch"
-          git remote set-url origin https://github.com/Democopy/Testcopy.git
-          git push origin -u demo
+          git init
+          git commit -m "latest"
+          git remote add origin origin https://github.com/Democopy/Testcopy.git
+          git add .
+          git push -u origin demo
+        # run: |
+        #   cd $HOME/Testcopy
+        #   git commit -m "Copy code from temp branch"
+        #   git remote set-url origin https://github.com/Democopy/Testcopy.git
+        #   git push origin -u demo

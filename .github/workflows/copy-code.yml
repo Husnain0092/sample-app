@@ -36,7 +36,7 @@ jobs:
           git add .
           git commit -m "new"
           git pull origin main --ff --allow-unrelated-histories
-          git push https://Democopy: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@github.com/Democopy/Testcopy.git demo
+          git push https://Democopy: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@github.com/Democopy/Testcopy.git demo
 
       # - name: Commit and push changes
         # env:

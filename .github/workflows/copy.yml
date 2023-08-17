@@ -29,6 +29,8 @@ jobs:
 
       - name: Commit and push changes to Account B repository
         run: |
+          git config --global user.email "husnain.ibrahim.12@gmail.com"
+          git config --global user.name "Husnain0092"
           git add .
           git commit -m "Copy code from Account A"
           git push origin demo

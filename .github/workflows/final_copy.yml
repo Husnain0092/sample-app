@@ -108,7 +108,7 @@ jobs:
           git add .
           git commit -m "first"
           git switch -c demo
-          git pull origin main
+          # git pull origin main
           git push origin demo
           
       # - name: Configure Git

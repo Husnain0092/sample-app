@@ -54,7 +54,7 @@ name: Copy Branch
 on:
   push:
     branches:
-      - temp
+      - temp_successful
 
 jobs:
   copy_branch:

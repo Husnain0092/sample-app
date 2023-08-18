@@ -41,8 +41,8 @@ jobs:
       - name: Copy branch
       
         run: |
-          git clone https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git
-          cd Test
+          git clone https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test1.git
+          cd Test1
           cp -R $GITHUB_WORKSPACE/* $HOME/.
           
 
@@ -54,8 +54,10 @@ jobs:
       - name: Commit and push changes
         run: |
           git add .
-          git remote set-url origin https://github.com/Seconddemo/Test.git
-          git switch -c main
-          git commit -m "Copy temp branch"
-          git push https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git main
+          git remote add origin https://github.com/Seconddemo/Test1.git
+          git branch -M main
+          git push -u origin main
+
+  
+          # git push https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git main
         

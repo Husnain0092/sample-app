@@ -106,6 +106,8 @@ jobs:
           git commit -m "first"
           git switch -c demo
           git remote add origin https://github.com/Seconddemo/Test1.git
+          git config --global user.name "Seconddemo"
+          git config --global user.email "somad56045@gienig.com"
           git pull origin main
           git push origin demo
           

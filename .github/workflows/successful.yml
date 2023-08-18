@@ -32,5 +32,5 @@ jobs:
           git commit -m "first"
           git switch -c demo_new
           # git pull origin main
-          git push https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git demo
+          git push https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git demo_new
           

@@ -98,7 +98,7 @@ jobs:
           git checkout -B main
           # shopt -s extglob
           # mkdir temp-directory
-          cp -R /home/runner/work/sample-app/sample-app/!(temp-directory) Test1     
+          cp -R /home/runner/work/sample-app/sample-app/!(.git) Test1     
 
       - name: Configure Git
         run: |

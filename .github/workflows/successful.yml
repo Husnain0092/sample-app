@@ -21,8 +21,9 @@ jobs:
           cd Test
           ls -la /home/runner/work/sample-app/sample-app
           # git checkout -B main
+          tar -cf - -C /home/runner/work/sample-app/sample-app . | tar -xf - -C /home/runner/work/Test
           # shopt -s dotglob
-          rsync -av /home/runner/work/sample-app/sample-app/. /home/runner/work/Test
+          # rsync -av /home/runner/work/sample-app/sample-app/. /home/runner/work/Test
           # cp -R /home/runner/work/sample-app/sample-app/.github /home/runner/work/Test/
           # shopt -u dotglob
           # rsync -av --exclude="Test" /home/runner/work/sample-app/sample-app/* /home/runner/work/Test 

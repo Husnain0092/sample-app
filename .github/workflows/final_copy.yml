@@ -101,7 +101,7 @@ jobs:
           # cp -R /home/runner/work/sample-app/sample-app Test1     
           rsync -av --exclude='.git' /home/runner/work/sample-app/sample-app /home/runner/work/sample-app/sample-app/Test1 
           cd /home/runner/work/sample-app/sample-app/Test1
-          git remote add origin https://github.com/Seconddemo/Test1.git
+          git remote set-url https://github.com/Seconddemo/Test1.git
           git config --global user.name "Seconddemo"
           git config --global user.email "somad56045@gienig.com"
           # git init

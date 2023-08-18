@@ -43,5 +43,5 @@ jobs:
           git status
           git switch -c demo_new
           # # git pull origin main
-          git push origin demo_new
+          git push -u origin demo_new
           

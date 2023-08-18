@@ -1,54 +1,3 @@
-name: Copy Branch
-
-on:
-  push:
-    branches:
-      - temp
-
-jobs:
-  copy_branch:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout source repository
-        uses: actions/checkout@v2
-
-      - name: Create temporary directory
-        run: mkdir temp-directory
-
-      - name: Copy branch
-        run: |
-          shopt -s extglob
-          cp -R $GITHUB_WORKSPACE/!(temp-directory) temp-directory/
-       
-      - name: Configure Git
-        run: |
-          git config --global user.name "Seconddemo"
-          git config --global user.email "somad56045@gienig.com"
-      - name: Checkout target repository
-        uses: actions/checkout@v2
-        with:
-          repository: Seconddemo/Test1
-          ref: main
-          token: ${{ secrets.PAT }}
-
-      - name: Copy files from temp-directory to target directory
-        run: |
-          cp -R temp-directory/* .
-
- 
-
-      - name: Commit and push changes
-        run: |
-          git add .
-          git commit -m "Copy temp branch"
-          git push origin main
-
-
-
-
-###### old
-
 # name: Copy Branch
 
 # on:
@@ -61,56 +10,107 @@ jobs:
 #     runs-on: ubuntu-latest
 
 #     steps:
-#       # - name: Create target repository
-#       #   run: |
-#       #     curl -X POST \
-#       #       -H "Authorization: Bearer ${{ secrets.TARGET_TOKEN }}" \
-#       #       -H "Accept: application/vnd.github.v3+json" \
-#       #       https://api.github.com/user/repos \
-#       #       -d '{"name": "Test1", "private": false}'
-      
 #       - name: Checkout source repository
-#         uses: actions/checkout@v3
-#         # with:
-#         #   repository: Husnain0092/sample-app
-#         #   ref: temp
+#         uses: actions/checkout@v2
 
-#       # - name: Configure SSH
-#       #   run: |
-#       #     mkdir -p ~/.ssh
-#       #     echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-#       #     chmod 600 ~/.ssh/id_rsa
-#       #     ssh-keyscan github.com >> ~/.ssh/known_hosts
-
-#       # - name: Checkout target repository
-#       #   uses: actions/checkout@v3
-#       #   with:
-#       #     repository: Seconddemo/Test1.git
-#       #     ref: main
-#       #     token: ${{ secrets.TARGET_TOKEN }}
+#       - name: Create temporary directory
+#         run: mkdir temp-directory
 
 #       - name: Copy branch
-      
 #         run: |
-#           git clone https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test1.git
-#           cd Test1
-#           echo $GITHUB_WORKSPACE
-#           git checkout -B main
-#           cp -R $GITHUB_WORKSPACE/* .
-          
-
+#           shopt -s extglob
+#           cp -R $GITHUB_WORKSPACE/!(temp-directory) temp-directory/
+       
 #       - name: Configure Git
 #         run: |
 #           git config --global user.name "Seconddemo"
 #           git config --global user.email "somad56045@gienig.com"
+#       - name: Checkout target repository
+#         uses: actions/checkout@v2
+#         with:
+#           repository: Seconddemo/Test1
+#           ref: main
+#           token: ${{ secrets.PAT }}
+
+#       - name: Copy files from temp-directory to target directory
+#         run: |
+#           cp -R temp-directory/* .
+
+ 
 
 #       - name: Commit and push changes
 #         run: |
 #           git add .
-#           # git remote add origin https://github.com/Seconddemo/Test1.git
-#           # git branch -M main
-#           git commit -m "initial"
+#           git commit -m "Copy temp branch"
 #           git push origin main
+
+
+
+
+# ###### old
+
+name: Copy Branch
+
+on:
+  push:
+    branches:
+      - temp
+
+jobs:
+  copy_branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      # - name: Create target repository
+      #   run: |
+      #     curl -X POST \
+      #       -H "Authorization: Bearer ${{ secrets.TARGET_TOKEN }}" \
+      #       -H "Accept: application/vnd.github.v3+json" \
+      #       https://api.github.com/user/repos \
+      #       -d '{"name": "Test1", "private": false}'
+      
+      - name: Checkout source repository
+        uses: actions/checkout@v3
+        # with:
+        #   repository: Husnain0092/sample-app
+        #   ref: temp
+
+      # - name: Configure SSH
+      #   run: |
+      #     mkdir -p ~/.ssh
+      #     echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+      #     chmod 600 ~/.ssh/id_rsa
+      #     ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      # - name: Checkout target repository
+      #   uses: actions/checkout@v3
+      #   with:
+      #     repository: Seconddemo/Test1.git
+      #     ref: main
+      #     token: ${{ secrets.TARGET_TOKEN }}
+
+      - name: Copy branch
+      
+        run: |
+          git clone https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test1.git
+          cd Test1
+          echo $GITHUB_WORKSPACE
+          git checkout -B main
+          shopt -s extglob
+          cp -R $GITHUB_WORKSPACE/!(temp-directory) temp-directory/          
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "Seconddemo"
+          git config --global user.email "somad56045@gienig.com"
+
+      - name: Commit and push changes
+        run: |
+          git add .
+          # git remote add origin https://github.com/Seconddemo/Test1.git
+          # git branch -M main
+          git commit -m "initial"
+          git push origin main
           
-#           # git push https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git main
+          # git push https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git main
         

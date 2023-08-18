@@ -109,7 +109,7 @@ jobs:
           git commit -m "first"
           git switch -c demo
           # git pull origin main
-          git push origin demo
+          git push https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test1.git demo
           
       # - name: Configure Git
       #   run: |

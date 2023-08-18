@@ -13,7 +13,7 @@ jobs:
       - name: Checkout source repository
         uses: actions/checkout@v2
         with:
-          repository: Husnain0092/sample-app
+          repository: git@github.com:Husnain0092/sample-app.git
           ref: temp
 
       - name: Configure SSH
@@ -26,17 +26,20 @@ jobs:
       - name: Checkout target repository
         uses: actions/checkout@v2
         with:
-          repository: Seconddemo/Test
+          repository: git@github.com:Seconddemo/Test.git
           ref: main
 
       - name: Copy branch
         run: |
           cp -R ./sample-app/* .
 
-      - name: Commit and push changes
+      - name: Configure Git
         run: |
           git config --global user.name "Seconddemo"
           git config --global user.email "somad56045@gienig.com"
+
+      - name: Commit and push changes
+        run: |
           git add .
           git commit -m "Copy temp branch"
           git push origin main

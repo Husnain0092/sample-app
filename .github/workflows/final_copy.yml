@@ -54,6 +54,8 @@ jobs:
       - name: Commit and push changes
         run: |
           git add .
+          git remote set-url origin https://github.com/Seconddemo/Test.git
+          git switch -c main
           git commit -m "Copy temp branch"
           git push origin main
         

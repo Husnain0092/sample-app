@@ -13,7 +13,7 @@ jobs:
       - name: Checkout source repository
         uses: actions/checkout@v3
         with:
-          repository: Husnain/sample-app
+          repository: Husnain0092/sample-app
           ref: temp
 
       - name: Configure SSH

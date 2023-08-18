@@ -30,8 +30,9 @@ jobs:
           cd /home/runner/work/Test
           ls -la /home/runner/work/Test/
           git remote set-url --add origin https://github.com/Seconddemo/Test.git
-          # git config --global user.name "Seconddemo"
-          # git config --global user.email "somad56045@gienig.com"
+          git config --global user.name "Seconddemo"
+          git config --global user.email "somad56045@gienig.com"
+          git remote -v
           # # git init
           # # git remote add origin https://github.com/Seconddemo/Test.git
           # git add .

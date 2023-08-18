@@ -97,6 +97,7 @@ jobs:
           echo $GITHUB_WORKSPACE
           git checkout -B main
           shopt -s extglob
+          mkdir temp-directory
           cp -R $GITHUB_WORKSPACE/!(temp-directory) temp-directory/          
 
       - name: Configure Git

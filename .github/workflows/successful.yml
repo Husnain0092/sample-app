@@ -20,7 +20,7 @@ jobs:
           git clone https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test1.git
           cd Test1
           ls -la /home/runner/work/sample-app/sample-app
-          rsync -av /home/runner/work/sample-app/sample-app /home/runner/work/Test/
+          rsync -av /home/runner/work/sample-app/sample-app /home/runner/work/Test
           cd /home/runner/work/Test/sample-app
           git remote remove origin
           git remote add origin https://github.com/Seconddemo/Test1.git

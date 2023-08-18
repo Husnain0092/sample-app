@@ -42,6 +42,7 @@ jobs:
           git commit -m "first" || true
           git status
           git switch -c demo_new
-          git pull origin demo
+          git remote -v
+          # git pull origin demo
           # git push origin demo_new
           

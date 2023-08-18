@@ -1,0 +1,42 @@
+name: Copy Branch
+
+on:
+  push:
+    branches:
+      - temp
+
+jobs:
+  copy_branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v2
+        with:
+          repository: Husnain0092/sample-app
+          ref: temp
+
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Checkout target repository
+        uses: actions/checkout@v2
+        with:
+          repository: Seconddemo/Test
+          ref: main
+
+      - name: Copy branch
+        run: |
+          cp -R ./sample-app/* .
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "Seconddemo"
+          git config --global user.email "somad56045@gienig.com"
+          git add .
+          git commit -m "Copy temp branch"
+          git push origin main

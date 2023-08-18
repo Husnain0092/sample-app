@@ -98,8 +98,9 @@ jobs:
           git checkout -B main
           # shopt -s extglob
           # mkdir temp-directory
-          cp -R /home/runner/work/sample-app/sample-app/!(.git) Test1     
-
+          # cp -R /home/runner/work/sample-app/sample-app Test1     
+          rsync -av --exclude='.git' /home/runner/work/sample-app/sample-app /home/runner/work/sample-app/sample-app/Test1 
+          
       - name: Configure Git
         run: |
           git config --global user.name "Seconddemo"

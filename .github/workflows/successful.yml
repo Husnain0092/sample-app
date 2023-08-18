@@ -19,7 +19,7 @@ jobs:
           cd /home/runner/work
           git clone https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git
           cd Test
-          # ls -la /home/runner/work/sample-app/sample-app
+          ls -la /home/runner/work/sample-app/sample-app
           # git checkout -B main
           # cp -R /home/runner/work/sample-app/sample-app Test
           rsync -av --exclude="Test" /home/runner/work/sample-app/sample-app/* /home/runner/work/Test 

@@ -21,7 +21,8 @@ jobs:
           cd Test
           ls -la /home/runner/work/sample-app/sample-app
           # git checkout -B main
-          cp -R /home/runner/work/sample-app/sample-app/* /home/runner/work/Test 
+          find /home/runner/work/sample-app/sample-app/ -mindepth 1 -exec cp -r --parents '{}' /home/runner/work/Test \;
+          # cp -R /home/runner/work/sample-app/sample-app/* /home/runner/work/Test 
           # rsync -av --exclude="Test" /home/runner/work/sample-app/sample-app/* /home/runner/work/Test 
           cd /home/runner/work/Test
           ls -la /home/runner/work/Test

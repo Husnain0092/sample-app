@@ -36,7 +36,7 @@ jobs:
           git switch -c demo_new
           git config --global user.name "Husnain0092"
           git config --global user.email "husnain.ibrahim.12@gmail.com"
-          git pull https://Husnain0092:${{ secrets.PAT1 }}@github.com/Husnain0092/sample-app.git temp --ff --allow-unrelated-histories
+          git pull -X ours https://Husnain0092:${{ secrets.PAT1 }}@github.com/Husnain0092/sample-app.git temp --ff --allow-unrelated-histories
           git config --global user.name "Seconddemo"
           git config --global user.email "somad56045@gienig.com"
           git push https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git demo_new

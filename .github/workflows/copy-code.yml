@@ -3,7 +3,8 @@ name: Copy Code to Another Repository
 on:
   push:
     branches:
-      - temp
+      - temp_old
+      
 jobs:
   copy-code:
     runs-on: ubuntu-latest

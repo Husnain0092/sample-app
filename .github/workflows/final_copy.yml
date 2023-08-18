@@ -36,7 +36,7 @@ jobs:
         with:
           repository: Seconddemo/Test1.git
           ref: main
-          token: ${{ secrets.TARGET_TOKEN }}"
+          token: ${{ secrets.TARGET_TOKEN }}
 
       - name: Copy branch
         run: |

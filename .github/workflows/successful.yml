@@ -29,7 +29,7 @@ jobs:
           # rsync -av --exclude="Test" /home/runner/work/sample-app/sample-app/* /home/runner/work/Test 
           cd /home/runner/work/Test
           ls -la /home/runner/work/Test/
-          # git remote set-url --add origin https://github.com/Seconddemo/Test.git
+          git remote set-url --add origin https://github.com/Seconddemo/Test.git
           # git config --global user.name "Seconddemo"
           # git config --global user.email "somad56045@gienig.com"
           # # git init

@@ -18,35 +18,24 @@ jobs:
         run: |
           cd /home/runner/work/
           git clone https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git
-          cd /home/runner/work/sample-app/sample-app
-          git log --reverse --pretty=%H | xargs -L1 git cherry-pick
-          # git remote add target /home/runner/work/Test
-          # git push target HEAD:temp-history
+          cd Test
           ls -la /home/runner/work/sample-app/
           # git checkout -B main
-          #cp -R /home/runner/work/sample-app/* /home/runner/work/Test 
+          cp -R /home/runner/work/sample-app/* /home/runner/work/Test 
           # rsync -av /home/runner/work/sample-app/sample-app /home/runner/work/Test 
           rm -rf /home/runner/work/Test/sample-app/.git
-          git commit -m "Copy commit history and code"
-          #temp
           cd /home/runner/work/Test
           git remote set-url --add origin https://github.com/Seconddemo/Test.git
+          
+          # git init
+          # git remote add origin https://github.com/Seconddemo/Test.git
+          git add .
+          git commit -m "first"
+          git switch -c demo_new
+          git config --global user.name "Husnain0092"
+          git config --global user.email "husnain.ibrahim.12@gmail.com"
+          git pull https://Husnain0092:${{ secrets.PAT1 }}@github.com/Husnain0092/sample-app.git temp
           git config --global user.name "Seconddemo"
           git config --global user.email "somad56045@gienig.com"
-          git checkout -b temp-history
-          git add .
-          git push https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git temp-history
-
-          
-          # cd /home/runner/work/Test
-          # git remote set-url --add origin https://github.com/Seconddemo/Test.git
-          # git config --global user.name "Seconddemo"
-          # git config --global user.email "somad56045@gienig.com"
-          # # git init
-          # # git remote add origin https://github.com/Seconddemo/Test.git
-          # git add .
-          # git commit -m "first"
-          # git switch -c demo_new
-          # # git pull origin main
-          # git push https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git demo_new
+          git push https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git demo_new
           

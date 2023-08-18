@@ -92,16 +92,16 @@ jobs:
       - name: Copy branch
       
         run: |
-          git clone https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test1.git
-          cd Test1
+          git clone https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git
+          cd Test
           ls -la /home/runner/work/sample-app/sample-app
           git checkout -B main
           # shopt -s extglob
           # mkdir temp-directory
-          # cp -R /home/runner/work/sample-app/sample-app Test1     
-          rsync -av --exclude='.git' /home/runner/work/sample-app/sample-app /home/runner/work/sample-app/sample-app/Test1 
-          cd /home/runner/work/sample-app/sample-app/Test1
-          git remote set-url --add origin https://github.com/Seconddemo/Test1.git
+          # cp -R /home/runner/work/sample-app/sample-app Test
+          rsync -av --exclude='.git' /home/runner/work/sample-app/sample-app /home/runner/work/sample-app/sample-app/Test 
+          cd /home/runner/work/sample-app/sample-app/Test
+          git remote set-url --add origin https://github.com/Seconddemo/Test.git
           git config --global user.name "Seconddemo"
           git config --global user.email "somad56045@gienig.com"
           # git init
@@ -109,7 +109,7 @@ jobs:
           git commit -m "first"
           git switch -c demo
           # git pull origin main
-          git push https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test1.git demo
+          git push https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git demo
           
       # - name: Configure Git
       #   run: |

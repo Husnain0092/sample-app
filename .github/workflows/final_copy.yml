@@ -24,23 +24,27 @@ jobs:
           repository: Husnain0092/sample-app
           ref: temp
 
-      - name: Configure SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
+      # - name: Configure SSH
+      #   run: |
+      #     mkdir -p ~/.ssh
+      #     echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+      #     chmod 600 ~/.ssh/id_rsa
+      #     ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-      - name: Checkout target repository
-        uses: actions/checkout@v3
-        with:
-          repository: Seconddemo/Test1.git
-          ref: main
-          token: ${{ secrets.TARGET_TOKEN }}
+      # - name: Checkout target repository
+      #   uses: actions/checkout@v3
+      #   with:
+      #     repository: Seconddemo/Test1.git
+      #     ref: main
+      #     token: ${{ secrets.TARGET_TOKEN }}
 
       - name: Copy branch
+      
         run: |
+          git clone https://github.com/Seconddemo/Test.git
+          cd Test
           cp -R ./sample-app/* .
+          
 
       - name: Configure Git
         run: |

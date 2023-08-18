@@ -13,7 +13,7 @@ jobs:
       - name: Checkout source repository
         uses: actions/checkout@v3
         with:
-          repository: git@github.com:Husnain0092/sample-app.git
+          repository: sample-app.git
           ref: temp
 
       - name: Configure SSH

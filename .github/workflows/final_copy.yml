@@ -17,7 +17,9 @@ jobs:
         run: mkdir temp-directory
 
       - name: Copy branch
-        run: cp -R $GITHUB_WORKSPACE/* temp-directory/
+        run: |
+          shopt -s extglob
+          cp -R $GITHUB_WORKSPACE/!(temp-directory) temp-directory/
 
       - name: Checkout target repository
         uses: actions/checkout@v2
@@ -27,7 +29,8 @@ jobs:
           token: ${{ secrets.PAT }}
 
       - name: Copy files from temp-directory to target directory
-        run: cp -R temp-directory/* .
+        run: |
+          cp -R temp-directory/* .
 
       - name: Configure Git
         run: |
@@ -39,6 +42,7 @@ jobs:
           git add .
           git commit -m "Copy temp branch"
           git push origin main
+
 
 
 

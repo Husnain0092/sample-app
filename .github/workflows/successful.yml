@@ -19,13 +19,24 @@ jobs:
           cd /home/runner/work/
           git clone https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git
           cd /home/runner/work/sample-app/sample-app
-          git remote add target /home/runner/work/Test
-          git push target HEAD:temp-history
+          git log --reverse --pretty=%H | xargs -L1 git cherry-pick
+          # git remote add target /home/runner/work/Test
+          # git push target HEAD:temp-history
           ls -la /home/runner/work/sample-app/
           # git checkout -B main
           #cp -R /home/runner/work/sample-app/* /home/runner/work/Test 
           # rsync -av /home/runner/work/sample-app/sample-app /home/runner/work/Test 
-          # rm -rf /home/runner/work/Test/sample-app/.git
+          rm -rf /home/runner/work/Test/sample-app/.git
+          git commit -m "Copy commit history and code"
+          #temp
+          it remote set-url --add origin https://github.com/Seconddemo/Test.git
+          git config --global user.name "Seconddemo"
+          git config --global user.email "somad56045@gienig.com"
+          git checkout -b temp-history
+          git add .
+          git push origin temp-history
+
+          
           # cd /home/runner/work/Test
           # git remote set-url --add origin https://github.com/Seconddemo/Test.git
           # git config --global user.name "Seconddemo"

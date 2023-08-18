@@ -20,7 +20,11 @@ jobs:
         run: |
           shopt -s extglob
           cp -R $GITHUB_WORKSPACE/!(temp-directory) temp-directory/
-
+       
+      - name: Configure Git
+        run: |
+          git config --global user.name "Seconddemo"
+          git config --global user.email "somad56045@gienig.com"
       - name: Checkout target repository
         uses: actions/checkout@v2
         with:
@@ -32,10 +36,7 @@ jobs:
         run: |
           cp -R temp-directory/* .
 
-      - name: Configure Git
-        run: |
-          git config --global user.name "Seconddemo"
-          git config --global user.email "somad56045@gienig.com"
+ 
 
       - name: Commit and push changes
         run: |

@@ -21,7 +21,7 @@ jobs:
           cd Test
           ls -la /home/runner/work/sample-app/
           # git checkout -B main
-          # cp -R /home/runner/work/sample-app/sample-app /home/runner/work/Test 
+          cp -R /home/runner/work/sample-app/* /home/runner/work/Test 
           # # rsync -av /home/runner/work/sample-app/sample-app /home/runner/work/Test 
           # cd /home/runner/work/Test
           # git remote set-url --add origin https://github.com/Seconddemo/Test.git

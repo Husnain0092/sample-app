@@ -43,7 +43,8 @@ jobs:
         run: |
           git clone https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test1.git
           cd Test1
-          cp -R $GITHUB_WORKSPACE/* $HOME/.
+          git checkout main
+          cp -R $GITHUB_WORKSPACE/* .
           
 
       - name: Configure Git

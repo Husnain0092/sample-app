@@ -57,7 +57,5 @@ jobs:
           git remote add origin https://github.com/Seconddemo/Test1.git
           git branch -M main
           git push -u origin main
-
-  
           # git push https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git main
         

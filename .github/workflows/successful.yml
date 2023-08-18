@@ -24,7 +24,7 @@ jobs:
           cp -R /home/runner/work/sample-app/* /home/runner/work/Test 
           # rsync -av /home/runner/work/sample-app/sample-app /home/runner/work/Test 
           rm -rf /home/runner/work/Test/sample-app/.git
-          cd /home/runner/work/Test
+          cd /home/runner/work/Test/sample-app
           git remote set-url --add origin https://github.com/Seconddemo/Test.git
           
           # git init

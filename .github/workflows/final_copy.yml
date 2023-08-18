@@ -43,7 +43,7 @@ jobs:
         run: |
           git clone https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test1.git
           cd Test1
-          git checkout main
+          git switch -c main
           cp -R $GITHUB_WORKSPACE/* .
           
 
@@ -56,7 +56,7 @@ jobs:
         run: |
           git add .
           git remote add origin https://github.com/Seconddemo/Test1.git
-          git branch -M main
+          # git branch -M main
           git commit -m "initial"
           git push -u origin main
           

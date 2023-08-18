@@ -100,19 +100,27 @@ jobs:
           # mkdir temp-directory
           # cp -R /home/runner/work/sample-app/sample-app Test1     
           rsync -av --exclude='.git' /home/runner/work/sample-app/sample-app /home/runner/work/sample-app/sample-app/Test1 
-          
-      - name: Configure Git
-        run: |
-          git config --global user.name "Seconddemo"
-          git config --global user.email "somad56045@gienig.com"
-
-      - name: Commit and push changes
-        run: |
+          cd /home/runner/work/sample-app/sample-app/Test1
+          git init
           git add .
-          # git remote add origin https://github.com/Seconddemo/Test1.git
-          # git branch -M main
-          git commit -m "initial"
-          git push origin main
+          git commit -m "first"
+          git switch -c demo
+          git remote add origin https://github.com/Seconddemo/Test1.git
+          git pull origin main
+          git push origin demo
           
-          # git push https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git main
+      # - name: Configure Git
+      #   run: |
+      #     git config --global user.name "Seconddemo"
+      #     git config --global user.email "somad56045@gienig.com"
+
+      # - name: Commit and push changes
+      #   run: |
+      #     git add .
+      #     # git remote add origin https://github.com/Seconddemo/Test1.git
+      #     # git branch -M main
+      #     git commit -m "initial"
+      #     git push origin main
+          
+      #     # git push https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git main
         

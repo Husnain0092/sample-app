@@ -46,5 +46,7 @@ jobs:
           git add .
           git commit -m "first" || true
           # git pull origin demo
+          git config --global user.name "Seconddemo"
+          git config --global user.email "somad56045@gienig.com"
           git push https://Seconddemo:${{ secrets.PAT }}@github.com/Seconddemo/Test.git demo_new
           

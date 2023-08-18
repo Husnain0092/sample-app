@@ -21,9 +21,9 @@ jobs:
           cd Test
           ls -la /home/runner/work/sample-app/sample-app
           # git checkout -B main
-          shopt -s dotglob
+          # shopt -s dotglob
           cp -R /home/runner/work/sample-app/sample-app/* /home/runner/work/Test
-          shopt -u dotglob
+          # shopt -u dotglob
           # rsync -av --exclude="Test" /home/runner/work/sample-app/sample-app/* /home/runner/work/Test 
           cd /home/runner/work/Test
           ls -la /home/runner/work/Test
